@@ -1,0 +1,41 @@
+{
+  "Id": "460f4950-7b05-4fa4-af42-0cb238918752",
+  "Name": "Email Validation",
+  "Metadata": {
+    "Description": "The Email Validation Rule ensures that email addresses are syntactically correct, trimmed, and domain-normalized. It checks for a single @, valid local part, and a proper domain with a top-level extension.\n",
+    "Version": "1.0",
+    "Author": "Export",
+    "CreatedAt": "02/09/2025"
+  },
+  "Domains": [
+    {
+      "Name": "Email",
+      "Description": "",
+      "DataType": 1
+    }
+  ],
+  "Rules": [
+    {
+      "Name": "Email Validation",
+      "Description": "The Email Validation Rule ensures that email addresses are syntactically correct, trimmed, and domain-normalized. It checks for a single @, valid local part, and a proper domain with a top-level extension.\n",
+      "Version": "1.0",
+      "DQDimensionId": 1,
+      "IsDataflowRule": false,
+      "Condition": {
+        "Operator": "and",
+        "Conditions": [
+          {
+            "Operator": "regex",
+            "Conditions": [],
+            "DomainRef": "Email",
+            "Value": "^(?=.{6,254}$)(?!.*\\.\\.)[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,63}$"
+          }
+        ],
+        "DomainRef": "",
+        "Value": ""
+      },
+      "ValidSuccessor": "",
+      "InvalidSuccessor": ""
+    }
+  ]
+}
